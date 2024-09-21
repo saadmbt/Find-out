@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style_sinup.css">
+    <title>Document</title>
+</head>
+<body>
+<!--<?php
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Store form values
+    $prenom = $_POST['prenom'];
+    $nom = $_POST['nom'];
+    $daten = $_POST['daten'];
+    $email = $_POST['email'];
+    $numero = $_POST['numero'];
+    $gender = $_POST['gender'];
+    $pss = $_POST['pss'];
+    $cpss = $_POST['cpss'];
+
+    // Validation
+    $valid = true;
+
+    // Validate prenom
+    if (empty($prenom)) {
+        $ereurprenom = "Le prénom est obligatoire.";
+        $valid = false;
+    }
+
+    // Validate nom
+    if (empty($nom)) {
+        $lnameerror = "Le nom de famille est obligatoire.";
+        $valid = false;
+    }
+
+    // Validate daten
+    if (empty($daten)) {
+        $edaten = "La date de naissance est obligatoire.";
+        $valid = false;
+    }
+
+    // Validate email
+    if (empty($email)) {
+        $eemail = "L'adresse e-mail est obligatoire.";
+        $valid = false;
+    } else {
+        // Additional email validation
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $eemail = "Format d'adresse e-mail invalide.";
+            $valid = false;
+        }
+    }
+
+    // Validate numero
+    if (empty($numero)) {
+        $enumero = "Le numéro de mobile est obligatoire.";
+        $valid = false;
+    }
+
+    // Validate gender
+    if (empty($gender)) {
+        $egender = "Le genre est obligatoire.";
+        $valid = false;
+    }
+
+    // Validate pss
+    if (empty($pss)) {
+        $epss = "Le mot de passe est obligatoire.";
+        $valid = false;
+    } else {
+        // Additional password validation
+        if (strlen($pss) < 8) {
+            $epss = "Le mot de passe doit contenir au moins 8 caractères.";
+            $valid = false;
+        }
+        if (!preg_match("#[0-9]+#", $pss)) {
+            $epss = "Le mot de passe doit contenir au moins un chiffre.";
+            $valid = false;
+        }
+        if (!preg_match("#[a-z]+#", $pss)) {
+            $epss = "Le mot de passe doit contenir au moins une lettre minuscule.";
+            $valid = false;
+        }
+        if (!preg_match("#[A-Z]+#", $pss)) {
+            $epss = "Le mot de passe doit contenir au moins une lettre majuscule.";
+            $valid = false;
+        }
+        if (!preg_match("#[!@#$%^&*()_+=]+#", $pss)) {
+            $epss = "Le mot de passe doit contenir au moins un symbole spécial.";
+            $valid = false;
+        }
+    }
+
+    // Validate cpss
+    if (empty($cpss)) {
+        $erorcpss = "La confirmation du mot de passe est obligatoire.";
+        $valid = false;
+    } else {
+        if ($cpss!= $pss) {
+            $erorcpss = "Les mots de passe ne correspondent pas.";
+            $valid = false;
+        }
+    }
+
+    // If form data is valid, redirect to a success page or perform an action
+    
+}
+?>
+-->
+    
+    <div class="form-container">
+        <h1>Formulaire d'inscription</h1>
+        <form action="" name="form" onsubmit="verfie()">
+          <div class="input-group">
+            <label><strong>Prénom:</strong></label>
+            <input type="text" placeholder="Entrez votre prénom" id="fname" name="prenom" required="entre">  (*)
+            <small id="ereurprenom"></small>
+          </div>
+
+          <div class="input-group">
+            <label><strong>Nom de famille:</strong></label>
+            <input type="text" placeholder="Entrez votre nom de famille" id="lname" name="nom" required >   (*)<br>
+            <small id="fname-error"></small>
+          </div>
+
+          <div class="input-group">
+            <label><strong>Date de naissance:</strong></label>
+            <input type="date" id="dob" name="daten" required>  (*)
+            <small id="edaten"></small>
+          </div> 
+
+          <div class="input-group">
+            <label><strong>Adresse e-mail:</strong></label>
+            <input type="email" placeholder="Entrez votre adresse e-mail" id="email-id" name="email" required>  (*)
+            <small id="eemail"></small>
+          </div>
+
+          <div class="input-group">
+            <label><strong>Numéro de mobile:</strong></label>
+            <input type="tel" placeholder="Entrez votre numéro de mobile" id="phone-no" name="numero" required>  (*)
+            <small id="enumero"></small>
+          </div>
+
+          <div class="input-group">
+            <label><strong>Genre:</strong></label>
+            <input type="radio" style="flex-basis: 0%; margin: 0 10px;" name="gender" value="male" id="male" >
+            <label for="male">Homme</label> 
+            <input type="radio" style="flex-basis: 0%; margin: 0 10px;"name="gender" value="female" id="female" required> 
+            <label for="female">Femme</label>   (*)
+            <small id="egender"></small>
+          </div> 
+    <!--validation mote de pass -->
+        <div class="wrapper">
+        <div class="input-group">
+            <div class="inputpss">
+            <label><strong>mote de pass:</strong></label>
+            <input type="password" placeholder="Mote de pass" id="myInput" class="inputpss" name="pss" required>  (*)
+            <small class="epss"><i></i></small>
+            <br>
+            <input type="checkbox" onclick="myFunction()">
+            <small class="cpss"><i>Afficher le mot de passe</i></small>
+            <!-- Password field -->
+            <!-- An element to toggle between password visibility -->
+            
+            </div>
+        </div>
+        <div class="content">
+            <p>Le mot de passe doit contenir</p>
+            <ul class="requirement-list">
+            <li>
+            <i class="fa-solid fa-circle"></i>
+            <span>Au moins 8 caractères de long</span>
+            </li>
+            <li>
+            <i class="fa-solid fa-circle"></i>
+            <span>Au moins un chiffre (0...9)</span>
+            </li>
+            <li>
+            <i class="fa-solid fa-circle"></i>
+            <span>Au moins une lettre minuscule (a...z)</span>
+            </li>
+            <li>
+            <i class="fa-solid fa-circle"></i>
+            <span>Au moins un symbole spécial (!...$)</span>
+            </li>
+            <li>
+            <i class="fa-solid fa-circle"></i>
+            <span>Au moins une lettre majuscule (A...Z)</span>
+            </li>
+            </ul>
+           </div>
+      
+        <div class="input-group">
+            <div class="inputcpss">
+                <label><strong>Confirm mote de pass:</strong></label>
+                <input type="password" placeholder="Mote de pass" id="myInputc" onkeyup="motpas()" class="cpass" name="cpss"><br>
+                <small class="erorcpss" style="color: red;text-decoration:darkorange ;"><i></i></small>
+                <br>
+                <input type="checkbox" name="" id="" onclick="myFunctionc()" >
+                
+                <small><i>Afficher le mot de passe</i></small>                                <br><br>                        (*) Champs obligatoire
+            </div>
+        </div>
+        <div style="text-align: center;"><button id="reset" type="reset">Anuuler</button><button type="submit" value="validé"><a href="login.html" style="text-decoration: none; color: aliceblue;">validé</a></button></div>
+        
+    </form>
+</div>
+</div>
+<script>   
+
+
+
+
+
+var ereurprenom=document.getElementById("ereurprenom");
+    var lnameerror=document.getElementById("lname-error");
+    var eemail=document.getElementById("eemail");
+    var edaten=document.getElementById("edaten");
+    var egender=document.getElementById("egender");
+    var enumero=document.getElementById("enumero");
+    var prenom=document.form.prenom.value;
+    var email=document.form.email.value;
+    var nom=document.form.nom.value;
+    var daten=document.form.daten.value;
+    var gender=document.form.gender.value;
+    var numero=document.form.numero.value;
+    function verfie(){
+   if(passwordInput != requirementList){alert("fffffff")}
+}
+    
+    ///  teper le mote de pass actuile
+
+    var cpss=document.getElementById("myInput").value;
+    
+    
+
+//validation de mot pass 
+    const passwordInput = document.querySelector(".inputpss input");
+    const eyeIcon = document.querySelector(".input-group i");
+    const requirementList = document.querySelectorAll(".requirement-list li");
+    
+    // An array of password requirements with corresponding 
+    // regular expressions and index of the requirement list item
+    const requirements = [
+        { regex: /.{8,}/, index: 0 }, // Minimum of 8 characters
+        { regex: /[0-9]/, index: 1 }, // At least one number
+        { regex: /[a-z]/, index: 2 }, // At least one lowercase letter
+        { regex: /[^A-Za-z0-9]/, index: 3 }, // At least one special character
+        { regex: /[A-Z]/, index: 4 }, // At least one uppercase letter
+    ]
+    
+    passwordInput.addEventListener("keyup", (e) => {
+        requirements.forEach(item => {
+            // Check if the password matches the requirement regex
+            const isValid = item.regex.test(e.target.value);
+            const requirementItem = requirementList[item.index];
+    
+            // Updating class and icon of requirement item if requirement matched or not
+            if (isValid) {
+                requirementItem.classList.add("valid");
+                requirementItem.firstElementChild.className = "fa-solid fa-check";
+            } else {
+                requirementItem.classList.remove("valid");
+                requirementItem.firstElementChild.className = "fa-solid fa-circle";
+            }
+        });
+    });
+//passowrd show hide 
+function myFunction() {
+    var x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+}//confirm pssword
+function myFunctionc() {
+    var y = document.getElementById("myInputc");
+        if (y.type === "password") {
+            y.type = "text";
+        } else {
+            y.type = "password";
+        }
+};
+const form= document.querySelector("from");
+var pass=form.querySelector(".inputpss");
+var cpass=form.querySelector(".cpass");
+</script>
+
+</body>
+</html>
