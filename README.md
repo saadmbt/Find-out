@@ -21,11 +21,6 @@ At Find Out, we prioritize transparency, reliability, and efficiency in everythi
 - **Backend:** PHP, MySQL
 ## Demo Video
 For a quick overview of how Find Out works, check out our demo video:
-<figure class="video_container">
-    <video  frameborder="0" allowfullscreen="true"> 
-        <source src="https://drive.google.com/file/d/1irdjPRKK0fI3WdQpO-wdaPJ6u3PbL8AQ/view?usp=sharing" type="video/mp4">
-        <figcaption>Demo Video <br>Findout</figcaption>
-    </video>
-</figure>
+<a href="https://drive.google.com/file/d/1irdjPRKK0fI3WdQpO-wdaPJ6u3PbL8AQ/view?usp=sharing" target="_blank">DEMO FIND OUT</a>
 
 ## Happy delivering with Find Out!
