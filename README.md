@@ -22,7 +22,9 @@ At Find Out, we prioritize transparency, reliability, and efficiency in everythi
 ## Demo Video
 For a quick overview of how Find Out works, check out our demo video:
 <figure class="video_container">
-  <iframe src="https://drive.google.com/file/d/1irdjPRKK0fI3WdQpO-wdaPJ6u3PbL8AQ/view?usp=sharing" frameborder="0" allowfullscreen="true"> 
-</iframe>
+    <iframe src="https://drive.google.com/file/d/1irdjPRKK0fI3WdQpO-wdaPJ6u3PbL8AQ/view?usp=sharing" frameborder="0" allowfullscreen="true"> 
+        <figcaption>Demo Video <br>Findout</figcaption>
+    </iframe>
 </figure>
+
 ## Happy delivering with Find Out!
